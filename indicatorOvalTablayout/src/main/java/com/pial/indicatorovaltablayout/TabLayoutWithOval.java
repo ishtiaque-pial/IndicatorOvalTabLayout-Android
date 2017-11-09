@@ -1119,7 +1119,7 @@ public class TabLayoutWithOval extends HorizontalScrollView {
             }
         }
 
-        class TabView extends LinearLayout implements OnLongClickListener {
+        private class TabView extends LinearLayout implements OnLongClickListener {
             private final Tab mTab;
             private TextView mTextView;
             private ImageView mIconView;
@@ -1130,7 +1130,7 @@ public class TabLayoutWithOval extends HorizontalScrollView {
 
             private int mDefaultMaxLines = 2;
 
-            public TabView(Context context, Tab tab) {
+            private TabView(Context context, Tab tab) {
                 super(context);
                 mTab = tab;
                 if (mTabBackgroundResId != 0) {
