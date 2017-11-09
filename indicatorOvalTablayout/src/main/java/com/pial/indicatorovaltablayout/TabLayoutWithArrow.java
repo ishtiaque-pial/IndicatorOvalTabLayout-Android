@@ -24,7 +24,6 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.ActionBar;
-import android.support.v7.widget.TintManager;
 import android.text.Layout;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -41,18 +40,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import klogi.com.viewpagerwithdifferentmenu.R;
-
-/**
- * Created by klogi on 12/23/2015.
- */
 public class TabLayoutWithArrow extends HorizontalScrollView {
 
         private static final int DEFAULT_HEIGHT_WITH_TEXT_ICON = 72; // dps
@@ -1036,7 +1029,7 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
              */
             @NonNull
             public Tab setIcon(@DrawableRes int resId) {
-                return setIcon(TintManager.getDrawable(mParent.getContext(), resId));
+                return null;
             }
 
             /**
@@ -1141,7 +1134,7 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
                 super(context);
                 mTab = tab;
                 if (mTabBackgroundResId != 0) {
-                    setBackgroundDrawable(TintManager.getDrawable(context, mTabBackgroundResId));
+                    //setBackgroundDrawable(TintManager.getDrawable(context, mTabBackgroundResId));
                 }
 
                 ViewCompat.setPaddingRelative(this, mTabPaddingStart, mTabPaddingTop,
