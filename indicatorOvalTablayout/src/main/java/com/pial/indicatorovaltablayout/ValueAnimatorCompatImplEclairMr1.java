@@ -9,7 +9,7 @@ import android.view.animation.Interpolator;
 /**
  * Created by klogi on 12/23/2015.
  */
-public class ValueAnimatorCompatImplEclairMr1 extends ValueAnimatorCompat.Impl {
+class ValueAnimatorCompatImplEclairMr1 extends ValueAnimatorCompat.Impl {
 
     private static final int HANDLER_DELAY = 10;
     private static final int DEFAULT_DURATION = 200;

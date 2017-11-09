@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.view.animation.Interpolator;
 
-public class ValueAnimatorCompatImplHoneycombMr1 extends ValueAnimatorCompat.Impl {
+ class ValueAnimatorCompatImplHoneycombMr1 extends ValueAnimatorCompat.Impl {
 
     final ValueAnimator mValueAnimator;
 

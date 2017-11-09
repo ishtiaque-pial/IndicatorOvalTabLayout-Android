@@ -46,7 +46,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class TabLayoutWithArrow extends HorizontalScrollView {
+public class TabLayoutWithOval extends HorizontalScrollView {
 
         private static final int DEFAULT_HEIGHT_WITH_TEXT_ICON = 72; // dps
         private static final int DEFAULT_GAP_TEXT_ICON = 8; // dps
@@ -86,7 +86,7 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
         public @interface Mode {}
 
         /**
-         * Gravity used to fill the {@link TabLayoutWithArrow} as much as possible. This option only takes effect
+         * Gravity used to fill the {@link TabLayoutWithOval} as much as possible. This option only takes effect
          * when used with {@link #MODE_FIXED}.
          *
          * @see #setTabGravity(int)
@@ -95,7 +95,7 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
         public static final int GRAVITY_FILL = 0;
 
         /**
-         * Gravity used to lay out the tabs in the center of the {@link TabLayoutWithArrow}.
+         * Gravity used to lay out the tabs in the center of the {@link TabLayoutWithOval}.
          *
          * @see #setTabGravity(int)
          * @see #getTabGravity()
@@ -170,15 +170,15 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
         private ValueAnimatorCompat mScrollAnimator;
         private ValueAnimatorCompat mIndicatorAnimator;
 
-        public TabLayoutWithArrow(Context context) {
+        public TabLayoutWithOval(Context context) {
             this(context, null);
         }
 
-        public TabLayoutWithArrow(Context context, AttributeSet attrs) {
+        public TabLayoutWithOval(Context context, AttributeSet attrs) {
             this(context, attrs, 0);
         }
 
-        public TabLayoutWithArrow(Context context, AttributeSet attrs, int defStyleAttr) {
+        public TabLayoutWithOval(Context context, AttributeSet attrs, int defStyleAttr) {
             super(context, attrs, defStyleAttr);
 
             ThemeUtils.checkAppCompatTheme(context);
@@ -485,7 +485,7 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
         }
 
         /**
-         * Returns the current mode used by this {@link TabLayoutWithArrow}.
+         * Returns the current mode used by this {@link TabLayoutWithOval}.
          *
          * @see #setTabMode(int)
          */
@@ -542,14 +542,14 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
         }
 
         /**
-         * The one-stop shop for setting up this {@link TabLayoutWithArrow} with a {@link ViewPager}.
+         * The one-stop shop for setting up this {@link TabLayoutWithOval} with a {@link ViewPager}.
          *
          * <p>This method will:
          * <ul>
          *     <li>Add a {@link ViewPager.OnPageChangeListener} that will forward events to
          *     this TabLayout.</li>
          *     <li>Populate the TabLayout's tabs from the ViewPager's {@link android.support.v4.view.PagerAdapter}.</li>
-         *     <li>Set our {@link TabLayoutWithArrow.OnTabSelectedListener} which will forward
+         *     <li>Set our {@link TabLayoutWithOval.OnTabSelectedListener} which will forward
          *     selected events to the ViewPager</li>
          * </ul>
          * </p>
@@ -892,9 +892,9 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
             private int mPosition = INVALID_POSITION;
             private View mCustomView;
 
-            private final TabLayoutWithArrow mParent;
+            private final TabLayoutWithOval mParent;
 
-            Tab(TabLayoutWithArrow parent) {
+            Tab(TabLayoutWithOval parent) {
                 mParent = parent;
             }
 
@@ -1707,7 +1707,7 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
 
         /**
          * A {@link ViewPager.OnPageChangeListener} class which contains the
-         * necessary calls back to the provided {@link TabLayoutWithArrow} so that the tab position is
+         * necessary calls back to the provided {@link TabLayoutWithOval} so that the tab position is
          * kept in sync.
          *
          * <p>This class stores the provided TabLayout weakly, meaning that you can use
@@ -1716,11 +1716,11 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
          * not cause a leak.
          */
         public static class TabLayoutOnPageChangeListener implements ViewPager.OnPageChangeListener {
-            private final WeakReference<TabLayoutWithArrow> mTabLayoutRef;
+            private final WeakReference<TabLayoutWithOval> mTabLayoutRef;
             private int mPreviousScrollState;
             private int mScrollState;
 
-            public TabLayoutOnPageChangeListener(TabLayoutWithArrow tabLayout) {
+            public TabLayoutOnPageChangeListener(TabLayoutWithOval tabLayout) {
                 mTabLayoutRef = new WeakReference<>(tabLayout);
             }
 
@@ -1733,7 +1733,7 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
             @Override
             public void onPageScrolled(int position, float positionOffset,
                                        int positionOffsetPixels) {
-                final TabLayoutWithArrow tabLayout = mTabLayoutRef.get();
+                final TabLayoutWithOval tabLayout = mTabLayoutRef.get();
                 if (tabLayout != null) {
                     // Update the scroll position, only update the text selection if we're being
                     // dragged (or we're settling after a drag)
@@ -1746,7 +1746,7 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
 
             @Override
             public void onPageSelected(int position) {
-                final TabLayoutWithArrow tabLayout = mTabLayoutRef.get();
+                final TabLayoutWithOval tabLayout = mTabLayoutRef.get();
                 if (tabLayout != null && tabLayout.getSelectedTabPosition() != position) {
                     // Select the tab, only updating the indicator if we're not being dragged/settled
                     // (since onPageScrolled will handle that).
@@ -1757,10 +1757,10 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
         }
 
         /**
-         * A {@link TabLayoutWithArrow.OnTabSelectedListener} class which contains the necessary calls back
+         * A {@link TabLayoutWithOval.OnTabSelectedListener} class which contains the necessary calls back
          * to the provided {@link ViewPager} so that the tab position is kept in sync.
          */
-        public static class ViewPagerOnTabSelectedListener implements TabLayoutWithArrow.OnTabSelectedListener {
+        public static class ViewPagerOnTabSelectedListener implements TabLayoutWithOval.OnTabSelectedListener {
             private final ViewPager mViewPager;
 
             public ViewPagerOnTabSelectedListener(ViewPager viewPager) {
@@ -1768,17 +1768,17 @@ public class TabLayoutWithArrow extends HorizontalScrollView {
             }
 
             @Override
-            public void onTabSelected(TabLayoutWithArrow.Tab tab) {
+            public void onTabSelected(TabLayoutWithOval.Tab tab) {
                 mViewPager.setCurrentItem(tab.getPosition());
             }
 
             @Override
-            public void onTabUnselected(TabLayoutWithArrow.Tab tab) {
+            public void onTabUnselected(TabLayoutWithOval.Tab tab) {
                 // No-op
             }
 
             @Override
-            public void onTabReselected(TabLayoutWithArrow.Tab tab) {
+            public void onTabReselected(TabLayoutWithOval.Tab tab) {
                 // No-op
             }
         }

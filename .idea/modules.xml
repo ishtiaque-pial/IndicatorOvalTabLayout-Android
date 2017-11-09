@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/IndicatorOvalTablayout.iml" filepath="$PROJECT_DIR$/IndicatorOvalTablayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/indicatorOvalTablayout/indicatorovaltablayout.iml" filepath="$PROJECT_DIR$/indicatorOvalTablayout/indicatorovaltablayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/indicatorOvalTablayout/indicatorOvalTablayout.iml" filepath="$PROJECT_DIR$/indicatorOvalTablayout/indicatorOvalTablayout.iml" />
     </modules>
   </component>
 </project>
