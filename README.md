@@ -31,3 +31,10 @@ TabLayoutWithOval tabLayout = (TabLayoutWithOval)findViewById(R.id.tabLayout);
         ViewPager viewPager = (ViewPager)findViewById(R.id.viewPager);
         viewPager.setAdapter(new PagerAdapter(getSupportFragmentManager(), fragments));
         tabLayout.setupWithViewPager(viewPager);
+
+Licence
+----------------
+```
+The MIT License (MIT)
+
+Copyright (c) 2017 Ishtiaque Morshed
