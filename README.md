@@ -1,3 +1,5 @@
+<img src="https://github.com/badoualy/stepper-indicator/blob/master/ART/screen.gif" width="300">
+
 Setup
 ----------------
 
