@@ -1,4 +1,4 @@
-<img src="https://github.com/badoualy/stepper-indicator/blob/master/ART/screen.gif" width="300">
+<img src="https://github.com/ishtiaque-pial/IndicatorOvalTabLayout-Android/blob/master/Image/Screen%20Shot%202017-11-26%20at%2010.39.36%20PM.png" width="300">
 
 Setup
 ----------------
