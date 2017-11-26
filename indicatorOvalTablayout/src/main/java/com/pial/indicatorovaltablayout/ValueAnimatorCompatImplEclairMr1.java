@@ -6,9 +6,6 @@ import android.os.SystemClock;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 
-/**
- * Created by klogi on 12/23/2015.
- */
 class ValueAnimatorCompatImplEclairMr1 extends ValueAnimatorCompat.Impl {
 
     private static final int HANDLER_DELAY = 10;
